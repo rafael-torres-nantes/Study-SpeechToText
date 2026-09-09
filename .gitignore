@@ -1,0 +1,32 @@
+# === Canonical Block (managed by RepoAutomaton) ===
+
+# --- Dados que representam o uso de IA ---
+.claude/
+.superpowers/
+.gemini/
+CLAUDE.md
+GEMINI.md
+
+# --- Arquivos temporários ---
+tmp/
+output/
+
+# --- Saída do graphify — derivada, reconstruível a qualquer momento ---
+.graphify/
+graphify-out/
+.graphifyignore
+
+# --- Segredos e configuração local (chaves, tokens — nunca versionar) ---
+.*/
+.env
+
+# --- Cache e artefatos do Python/pytest ---
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# --- Opções de performance (trade-off velocidade x precisão) — ver .env ---
+# Whisper (config/settings.py):
+#   WHISPER_MODEL_SIZE=medium + WHISPER_BEAM_SIZE=5 -> mais preciso, transcrição mais lenta
+#   WHISPER_MODEL_SIZE=small  + WHISPER_BEAM_SIZE=1 -> mais rápido, leve perda de precisão (ATUAL)
+#   WHISPER_DEVICE=cuda + WHISPER_COMPUTE_TYPE=float16 -> mais rápido que CPU, com fallback automático se a GPU falhar
